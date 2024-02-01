@@ -21,5 +21,5 @@ public class UgtService {
     public Optional<Ugt> getById(String idugt){
         return ugtRepository.findById(idugt);
     }
-    
+
 }
