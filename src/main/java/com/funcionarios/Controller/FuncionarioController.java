@@ -27,6 +27,11 @@ public class FuncionarioController {
         return funcionarioService.getById(idFuncionario).map(funcionario -> new ResponseEntity<>(funcionario, HttpStatus.OK)).orElse(new ResponseEntity<>(HttpStatus.NOT_FOUND));
     }
 
+    @GetMapping("/ugt/{idugt}")
+    public ResponseEntity<List<Funcionario>> getFuncByUgt(@PathVariable("idugt") String idugt){
+        return new ResponseEntity<>(funcionarioService.getByUgt(idugt), HttpStatus.OK);
+    }
+
     @PostMapping("/save")
     public ResponseEntity<Funcionario> guardarFuncionario(@RequestBody Funcionario funcionario){
         return new ResponseEntity<>(funcionarioService.save(funcionario), HttpStatus.CREATED);

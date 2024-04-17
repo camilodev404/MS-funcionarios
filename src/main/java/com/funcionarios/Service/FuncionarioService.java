@@ -30,4 +30,8 @@ public class FuncionarioService {
         return funcionarioRepository.save(funcionario);
     }
 
+    public List<Funcionario> getByUgt(String idugt) {
+        return funcionarioRepository.findByUgt(idugt);
+    }
+
 }
